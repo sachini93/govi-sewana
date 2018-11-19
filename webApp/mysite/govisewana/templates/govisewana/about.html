@@ -1,0 +1,97 @@
+{% include "govisewana/Header.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Govi Sewana</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	* {
+    box-sizing: border-box;
+	}
+
+	body {
+  	font-family: Arial, Helvetica, sans-serif;
+  	margin: 0; 
+	}
+	
+  /*Style the about us*/
+  .topic{
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  .topic h1{
+    font-size: 30px;
+    color: white;
+  }
+
+  .about{
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  /* Main column */
+  .main { 
+    flex: 100%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+</style>
+</head>
+<body>
+  <!--About Us-->
+  <div class="topic">
+    <h1>About Us</h1>
+  </div>
+
+  <div class="about">
+    <div class="main">
+      <p>
+        The world population is a rapidly growing factor. Meanwhile maintaining the balance between
+the demand and supply of essential food items has become critical. Rice is one of the main type
+of nutrient supplying foods in Sri Lanka. So, keeping the sustainable gap between demand and
+the supply of paddy is essential.<br><br>
+Current systems for this predictions on future demand and supply are two independent
+methods, and the impact of background factors are not monitored together to have an exact
+predicted value.<br><br>
+So, we are suggesting a single platform, where we would consider numerous factors affecting on
+the amount of crop yield by the next harvesting season, and the factors affecting on future
+demand for rice around Sri Lanka.<br><br>
+Considering these both values we may come up with a predicted crop yield and the predicted
+demand on district base by next harvesting season.<br><br>
+We are suggesting a single platform to monitor the impact of background factors on paddy crop
+yield and the rice demand.<br><br>
+Based on these results we will be implement a module to predict the price of paddy/ kg and the
+amount of rice needed to be exported in order to fulfill the demand.<br><br>
+And also based on the predicted crop yield, we will be implementing a schedule to distribute the
+available paddy harvest in an optimized manner around the country.<br><br>
+      </p>
+      <hr>
+      <div class="group">
+        <h2>Our Team</h2>
+        <ul>
+          <li><b>Supervisor - Dr. Windhya Rankothge</b></li>
+          <li>M.R.S. Muthusinghe - IT15076526</li>
+          <li>S.T. Palliyaguru - IT15099846</li>
+          <li>W.A.N.D. Weerakkody - IT15136398</li>
+          <li>A.M.Hashini Saranga - IT15116734</li>
+        </ul> 
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}
+{% include "govisewana/footer.html" %}

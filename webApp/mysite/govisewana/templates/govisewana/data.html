@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Govi Sewana</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	* {
+    box-sizing: border-box;
+	}
+
+	body {
+  	font-family: Arial, Helvetica, sans-serif;
+  	margin: 0; 
+	}
+
+  /*Style the data*/
+  .topic{
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  .topic h1{
+    font-size: 30px;
+    color: white;
+  }
+
+  .add{
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  /* Main column */
+  .main { 
+    flex: 100%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+  /* Style inputs with type="text", select elements and textareas */
+  input[type=text], select {
+    width: 50%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  } 
+
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+</style>
+</head>
+<body>
+	
+  <!--Add Data-->
+  <div class="topic">
+    <h1>Enter Data</h1>
+  </div>
+
+  <div class="add">
+    <div class="main">
+      <div class="container">
+        <form action="javascript:alert('success!')">
+          <div>
+            <label for="district">District</label>
+            <select id="district" name="district">
+              <option value="anuradhapura">Anuradhapura</option>
+              <option value="kurunegala">Kurunegala</option>
+              <option value="matara">Matara</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="season">Season</label>
+            <select id="season" name="season">
+              <option value="yala">Yala</option>
+              <option value="maha">Maha</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="area">Paddy Yield Area</label>
+            <input type="text" id="area" name="parea" placeholder="Paddy Yield Area">
+          </div>
+          
+          <div>
+            <label for="rainfall">Rainfall</label>
+            <input type="text" id="rain" name="rainfall" placeholder="Rainfall">
+          </div>
+
+          <div>
+            <label for="population">Population</label>
+            <input type="text" id="population" name="population" placeholder="Population">
+          </div>
+
+          <div>
+            <label for="sfc">Substitute Food Consumption</label>
+            <input type="text" id="sfc" name="sfc" placeholder="Substitute Food Consumption">
+          </div>
+
+          <div>
+            <label for="hi">Household Income</label>
+            <input type="text" id="hi" name="income" placeholder="Household Income">
+          </div>
+
+          <input type="submit" value="Submit">
+
+        </form>
+      </div>
+    </div>
+  </div>	
+</body>
+</html>

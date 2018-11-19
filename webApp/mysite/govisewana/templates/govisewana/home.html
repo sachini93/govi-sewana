@@ -1,0 +1,120 @@
+{% include "govisewana/Header.html" %}
+{% load staticfiles %}
+{% include "govisewana/slider.html" %}
+{% block content %}
+ </header>   
+<style>
+	* {
+    	box-sizing: border-box;
+	}
+
+	body {
+    	font-family: Arial, Helvetica, sans-serif;
+    	margin: 0; 
+	}
+
+
+	/* Float four columns side by side */
+	.column {
+  		float: left;
+  		width: 33.3333333333%;
+  		padding: 0 10px;
+	}
+
+	/* Remove extra left and right margins, due to padding in columns */
+	.row {
+		margin: 0 -5px;
+    	background-color: black;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+ 		content: "";
+  		display: table;
+  		clear: both;
+	}
+
+	/* Style the counter cards */
+	.card {
+  		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  		padding: 16px;
+  		text-align: center;
+  		background-color: #333;
+  		opacity:0.9;
+    	filter: alpha(opacity=30);
+    	height: 425px;
+	}
+
+	.card img{
+		border: 1px solid #ddd;
+   		border-radius: 4px;
+    	padding: 5px;
+    	width: 300px;
+	}
+
+	.card h2{
+		color: white;
+	}
+
+	.card p{
+		color: white;
+	}
+
+	.card button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+	/* Responsive columns - one column layout (vertical) on small screens */
+	@media screen and (max-width: 600px) {
+  		.column {
+    		width: 100%;
+    		display: block;
+    		margin-bottom: 20px;
+  		}
+	}
+
+
+</style>
+</head>
+<body>
+	<!-- Services -->
+	<div class="row">
+  		<div class="column">
+    		<div class="card">
+    			<h2>Harvest Prediction</h2>
+    			<img class="serviceImg" src="{% static 'images/4.jpg' %}"  >
+    			<p>Prediction on Harvet on District basis</p>
+    			<a href="Harvest.html"><button class="button">Go</button></a>
+    		</div>
+  		</div>
+  		<div class="column">
+    		<div class="card">
+    			<h2>Demand Prediction</h2>
+    			<img class="serviceImg" src="{% static 'images/5.jpg' %}" >
+    			<p>Prediction on Demand on District basis</p>
+    			<a href="demand.html"><button class="button">Go</button></a>
+    		</div>
+  		</div>
+  		<div class="column">
+    		<div class="card">
+    			<h2>Rice Distribution</h2>
+    			<img class="serviceImg" src="{% static 'images/6.jpg' %}" >
+    			<p>Optimized Distribution schedule</p>
+    			<a href="runDistribution"><button class="button">Go</button></a>
+    		</div>
+  		</div>
+  	</div>
+</body>
+</html>
+{% endblock %}
+{% include "govisewana/footer.html" %}

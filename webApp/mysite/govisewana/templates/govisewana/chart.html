@@ -1,0 +1,13 @@
+{% load nvd3_tags %}
+<head>
+    {# Jquery CDN : Needed when using jquery_on_ready=True #}
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    {% include_chart_jscss %}
+    {% load_chart data.charttype data.chartdata data.chartcontainer data.extra %}
+</head>
+<body>
+    {% include_container data.chartcontainer 400 600 %}
+</body>

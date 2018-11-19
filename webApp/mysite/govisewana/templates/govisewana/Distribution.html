@@ -1,0 +1,199 @@
+{% include "govisewana/Header.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Govi Sewana</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	* {
+    box-sizing: border-box;
+	}
+
+	body {
+  	font-family: Arial, Helvetica, sans-serif;
+  	margin: 0; 
+	}
+
+  /*Style the destribution*/
+  .topic{
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  .topic h1{
+    font-size: 30px;
+    color: white;
+  }
+
+  .destribution{
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  /* Column container */
+  .row2 { 
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/right column */
+  .side {
+    flex: 50%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; /* Some padding */
+  }
+
+  /* Main column */
+  .main { 
+    flex: 50%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+  /* Full-width selecters */
+  .combo, input[type=text] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  .combo:focus, input[type=text]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity:1;
+  }
+
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
+  }
+
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Change styles for button on extra small screens */
+  @media screen and (max-width: 300px) {
+    button{
+      width: 100%;
+    }
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+</style>
+</head>
+<body>
+
+  <!--Rice Destribution-->
+  <div class="topic">
+    <h1>Rice Distribution</h1>
+  </div>
+
+  <div class="destribution">
+    <div class="row2">
+      <div class="main">
+        <form action="" style="border:1px solid #ccc">
+          <div class="container">
+            <h3>Genetic Algorithm</h3>
+            <table style="width:100%">
+              <tr>
+                <th></th>
+                {% for con in List_GA|safeseq %}
+                <td>{{ con }}</td>
+                {% endfor %}
+              </tr>
+              <tr>
+                <td>Demand</td>
+                {% for dem in demand_GA|safeseq %}
+                <td>{{ dem }}</td>
+                {% endfor %}
+              </tr>
+              <tr>
+                <td>Solution</td>
+                {% for sol in solution_GA|safeseq %}
+                <td>{{ sol }}</td>
+                {% endfor %}
+              </tr>
+            </table>
+            <br>
+            <label>Fitness Value:{{ fitnesScore_GA }} </label>
+          </div>
+        </form>
+      </div>
+      <div class="side">
+        <form action="javascript:alert('success!')" style="border:1px solid white">
+          <div class="container">
+            <h3>Iterated Local Search Algorithm</h3>
+            <table style="width:100%">
+              <tr>
+                <th></th>
+                {% for con in consumer_ILS|safeseq %}
+                <td>{{ con }}</td>
+                {% endfor %}
+              </tr>
+              <tr>
+                <td>Demand</td>
+                {% for dem in demand_ILS|safeseq %}
+                <td>{{ dem }}</td>
+                {% endfor %}
+              </tr>
+              <tr>
+                <td>Solution</td>
+                {% for sol in solution_ILS|safeseq %}
+                <td>{{ sol }}</td>
+                {% endfor %}
+              </tr>
+            </table>
+            <br>
+            <label>Fitness Value:{{ fitnesScore_ILS }} </label>
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}
+{% include "govisewana/footer.html" %}

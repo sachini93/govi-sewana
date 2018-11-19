@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Govi Sewana</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+	* {
+    box-sizing: border-box;
+	}
+
+	body {
+  	font-family: Arial, Helvetica, sans-serif;
+  	margin: 0; 
+	}
+
+  /*Style the data*/
+  .topic{
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  .topic h1{
+    font-size: 30px;
+    color: white;
+  }
+
+  .add{
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  /* Main column */
+  .main { 
+    flex: 100%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+  /* Style inputs with type="text", select elements and textareas */
+  input[type=text], select {
+    width: 50%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  } 
+
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 50px;
+    width: 80%;
+    margin:30px
+  }
+  .container input{
+    width:200px
+  }
+  .container label{
+    width:500px
+  }
+
+select {
+    width: 25%;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="topic">
+    <h1>Add Parameter</h1>
+  </div>
+
+  <div class="add">
+    <div class="main">
+      <div class="container">
+        <form class="form-inline" action="/action_page.php">
+          <label for="name">Name:</label>
+          <input type="name" id=name" placeholder="Enter Parameter Name" name="name">
+          <label for="pwd">Type:</label>
+          <select>
+            <option value="int">int</option>
+            <option value="float">float</option>
+            <option value="double">double</option>
+            <option value="str">String</option>
+          </select>
+          <label>Ddd date</label>
+          <input type="file" id="myFile">
+        </form>
+        <div id="myProgress">
+          <div id="myBar"></div>
+        </div>
+        <br>
+        <button onclick="move()">Click Me</button> 
+      </div>
+    </div>
+  </div>	
+  <script>
+    function move() {
+      var elem = document.getElementById("myBar");   
+      var width = 1;
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+        } else {
+          width++; 
+          elem.style.width = width + '%'; 
+        }
+      }
+    }
+  </script>
+</body>
+</html>

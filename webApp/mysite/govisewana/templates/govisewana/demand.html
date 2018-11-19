@@ -1,0 +1,197 @@
+{% include "govisewana/Header.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Govi Sewana</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	* {
+    box-sizing: border-box;
+	}
+
+	body {
+  	font-family: Arial, Helvetica, sans-serif;
+  	margin: 0; 
+	}
+
+  /*Style the demand*/
+  .topic{
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  .topic h1{
+    font-size: 30px;
+    color: white;
+  }
+
+  .demand{
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 25px 0 20px 0;
+  }
+
+  /* Column container */
+  .row2 { 
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/right column */
+  .side {
+    flex: 40%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding-top: 20px; /* Some padding */
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px
+  }
+  
+  .middle{
+    flex: 10%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding-top: 5px; /* Some padding */
+  }
+
+  .graph{
+    padding: 10px
+  }
+
+  /* Main column */
+  .main { 
+    flex: 30%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-bottom: 20px
+  }
+
+  /* Full-width selecters */
+  .combo {
+    width: 50%;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  .combo:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity:1;
+  }
+
+  /* Add padding to container elements */
+  .container {
+    padding: 50px;
+    margin-top:50px 
+  }
+
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Change styles for button on extra small screens */
+  @media screen and (max-width: 300px) {
+    button{
+      width: 100%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <!--Demand Prediction-->
+  <div class="topic">
+    <h1>Demand Prediction</h1>
+  </div>
+
+  <div class="demand">
+    <div class="row2">
+      <div class="main">
+        <form action="" style="border:1px solid #ccc; margin-top:120px">
+          <div class="container">
+            <div>
+              <label for="district"><b>District:  </b></label>
+              <select class="combo">
+                <option value="select">-Select-</option>
+                <option value="anuradhapura">Anuradhapura</option>
+                <option value="kurunegala">Kurunegala</option>
+                <option value="matara">Matara</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="season"><b>Season:  </b></label>
+              <select class="combo">
+                <option value="select">-Select-</option>
+                <option value="yala">Yala</option>
+                <option value="maha">Maha</option>
+              </select>
+            </div>
+
+            <div class="clearfix">
+              <button type="submit" class="submit" onsubmit="setTimeout(function(){window.location.reload();},10)">Submit</button>
+            </div>
+
+            
+
+            <p>For the contribution by adding details. <a href="dataDemand" style="color:dodgerblue">Add Details</a>.</p>
+          </div>
+        </form>
+      </div>
+      
+      <div class="side">
+          <div class="middle">
+          
+            <h4><span class="badge badge-info">Predicted Amount</span></h4>
+            <h4><span class="badge badge-info"></span>{{ predictedAmount }}</span></h4>
+              
+              
+            </div>
+            <div>
+              <a href="https://plot.ly/~sachini93/19/?share_key=fJOTs0bAK7hC9h4mLYYoLK" target="_blank" title="line-mode-demand-1" style="display: block; text-align: center;"><img src="https://plot.ly/~sachini93/19.png?share_key=fJOTs0bAK7hC9h4mLYYoLK" alt="line-mode-demand-1" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+              <script data-plotly="sachini93:19" sharekey-plotly="fJOTs0bAK7hC9h4mLYYoLK" src="https://plot.ly/embed.js" async></script>
+          </div>
+                    
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}
+{% include "govisewana/footer.html" %}
